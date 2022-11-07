@@ -1,0 +1,76 @@
+$width: 220px;
+
+div.main {
+  margin: 20px;
+  display: flexbox;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.button{
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:15px 0.3em 0.3em 0;
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#4eb5f1;
+  text-align:center;
+  transition: all 0.2s;
+  }
+.button:hover{
+  background-color:#4095c6;
+  }
+@media all and (max-width:30em){
+.button{
+  display:block;
+  margin:0.2em auto;
+  }
+} 
+
+anim-main {
+  margin-bottom: 10px;
+  width: $width;
+  height: 20px;
+  background-color: aqua;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+div.fade {
+  @extend anim-main;
+  animation-name: fade-anim;
+}
+
+div.pulse {
+  @extend anim-main;
+  animation-name: pulse-anim;
+}
+
+div.rainbow {
+  width: $width;
+  height: 20px;
+  background: 
+  linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
+  0 0/200% 100%;
+  animation: a 2s linear infinite;
+}
+
+@keyframes a {
+  to {background-position:-200% 0}
+}
+
+@keyframes fade-anim {
+  from {width: 0px;}
+  to {width: $width;}
+}
+
+@keyframes pulse-anim {
+  0% {opacity: 0;}
+  50% {opacity: 100;}
+  100% {opacity: 0;}
+}
