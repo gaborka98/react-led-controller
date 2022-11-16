@@ -43,12 +43,20 @@ anim-main {
 
 div.fade {
   @extend anim-main;
+  width: 70px;
+  position: relative;
+  overflow: hidden;
+  animation-duration: 1.5s;
   animation-name: fade-anim;
 }
 
 div.pulse {
   @extend anim-main;
   animation-name: pulse-anim;
+}
+
+div.simple {
+  @extend anim-main;
 }
 
 div.rainbow {
@@ -65,8 +73,8 @@ div.rainbow {
 }
 
 @keyframes fade-anim {
-  from {width: 0px;}
-  to {width: $width;}
+  from {left: 0%;}
+  to {left: 100%;}
 }
 
 @keyframes pulse-anim {
